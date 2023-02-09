@@ -6,3 +6,10 @@ SELECT employees.id, employees.first_name, employees.last_name, roles.title, dep
 FROM employees
 LEFT JOIN roles ON employees.title_id = roles.id
 INNER JOIN departments ON roles.department_id = departments.id;
+
+SELECT * FROM employees 
+RIGHT JOIN roles ON employees.title_id = roles.id;
+
+UPDATE roles
+SET salary = 130000
+WHERE title = 'Accountant';

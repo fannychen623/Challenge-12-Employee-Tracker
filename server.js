@@ -1,5 +1,4 @@
 const express = require('express');
-// Import and require mysql2
 const mysql = require('mysql2');
 
 const PORT = process.env.PORT || 3001;
@@ -22,9 +21,8 @@ const db = mysql.createConnection(
   console.log(`Connected to the employeeTracker_db database.`)
 );
 
-// Query database
-db.query('SELECT * FROM departments', function (err, results) {
-  console.log(results);
+db.connect(function(err) {
+  if (err) throw err;
 });
 
 // Default response for any other request (Not Found)
@@ -32,6 +30,14 @@ app.use((req, res) => {
   res.status(404).end();
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+module.exports = db;
+
+// const salary =150000;
+// const title ='Accountant';
+// db.query(`UPDATE roles SET salary = ${salary} WHERE title = '${title}'`, function (err, results) {
+//   console.log(results)
+// })
+// 
+// db.query(`SELECT * from roles`, function (err, results) {
+//   console.log(results)
+// })

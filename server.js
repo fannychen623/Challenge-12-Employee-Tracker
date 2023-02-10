@@ -31,3 +31,8 @@ app.use((req, res) => {
 });
 
 module.exports = db;
+
+// db.query(`Select * from departments`, (err, results) => {
+//   console.table(results);
+//   process.exit(0);
+// });

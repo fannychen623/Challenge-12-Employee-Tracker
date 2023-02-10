@@ -1,4 +1,4 @@
-SELECT roles.id, roles.title, departments.name as department, roles.salary
+SELECT roles.id, roles.title, departments.name, roles.salary
 FROM roles
 LEFT JOIN departments ON roles.department_id = departments.id;
 
@@ -9,7 +9,3 @@ INNER JOIN departments ON roles.department_id = departments.id;
 
 SELECT * FROM employees 
 RIGHT JOIN roles ON employees.title_id = roles.id;
-
-UPDATE roles
-SET salary = 130000
-WHERE title = 'Accountant';

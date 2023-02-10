@@ -32,12 +32,31 @@ app.use((req, res) => {
 
 module.exports = db;
 
-// const salary =150000;
-// const title ='Accountant';
-// db.query(`UPDATE roles SET salary = ${salary} WHERE title = '${title}'`, function (err, results) {
-//   console.log(results)
-// })
-// 
+// const { printTable, Table } = require("console-table-printer");
+
 // db.query(`SELECT * from roles`, function (err, results) {
-//   console.log(results)
-// })
+//   const p = new Table({
+//     title: 'Roles',
+//     columns: [{ name: "Title", alignment: "center" }, { name: "Salary", alignment: "center" }],
+//   });
+//   results.forEach(results => {
+//     p.addRows([
+//       {
+//         Title: results.title,
+//         Salary: results.salary,
+//       },
+//     ],{ color: "blue" });
+//   });
+//   console.log('\n');
+//   p.printTable();
+//   console.log('\n');
+//   process.exit(0);
+// });
+// db.query(`SELECT employees.first_name, employees.last_name, managers.first_name, managers.last_name FROM Employees employees LEFT OUTER JOIN Employees managers ON employees.manager_id = managers.id`, function (err, results) {
+//   console.table(results);
+//   process.exit(0);
+// });
+// db.query(`SELECT * from employees`, function (err, results) {
+//   console.table(results);
+//   process.exit(0);
+// });

@@ -1,8 +1,8 @@
-// define local package used to generate profile
+// define local package used to launch tracker
 const Action = require('./lib/action');
 
-// initialize a new profile
+// initialize a new action
 const action = new Action();
 
-// start creating
+// start launch
 action.launchAction();

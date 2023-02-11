@@ -1,6 +1,8 @@
+// Define packages used
 const express = require('express');
 const mysql = require('mysql2');
 
+// Define server PORT
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -21,7 +23,7 @@ const db = mysql.createConnection(
   console.log(`Connected to the employeeTracker_db database.`)
 );
 
-
+// Error handler if database connection fails
 db.connect(function(err) {
   if (err) throw err;
 });
